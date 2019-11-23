@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="EstanciasProcedimientoView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TableView fx:id="EstanciasProcedimiento" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="ColumnaNombreResidencia" prefWidth="139.20001220703125" text="Nombre residencia" />
+          <TableColumn fx:id="ColumnaNombreUniversidad" prefWidth="153.60003662109375" text="Nombre universidad" />
+            <TableColumn fx:id="ColumnaInicio" prefWidth="112.0" text="Fecha de inicio" />
+            <TableColumn fx:id="ColumnaFin" prefWidth="96.800048828125" text="Fecha fin" />
+            <TableColumn fx:id="ColumnaPrecio" prefWidth="103.99993896484375" text="Precio" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

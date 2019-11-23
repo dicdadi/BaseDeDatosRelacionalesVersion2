@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="View" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane fx:id="GridPaneBD" prefHeight="600.0" prefWidth="774.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints maxWidth="678.2000244140625" minWidth="10.0" prefWidth="526.4000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.4000244140625" minWidth="121.39997558593757" prefWidth="273.5999755859375" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints maxHeight="483.59999694824216" minHeight="10.0" prefHeight="473.2000030517578" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox fx:id="VboxBD" alignment="CENTER" prefHeight="161.0" prefWidth="587.0">
+               <children>
+                  <HBox fx:id="HboxSelecion" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="469.0">
+                     <children>
+                        <Label fx:id="SelecionLabel" text="Selecciona BD:" />
+                        <ComboBox fx:id="ComboBD" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="HboxBDConectada" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="537.0">
+                     <children>
+                        <Label fx:id="ConectadoLabel" text="Base de datos conectada: " />
+                        <Label fx:id="MensajeBDLabel" text="&lt;No hay base de datos conectada&gt;" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="HboxEstadoDB" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="601.0">
+                     <children>
+                        <Label fx:id="LabelEstado" text="Estado de la conexion:" />
+                        <ImageView fx:id="ImagenEstado" fitHeight="21.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/conexionOFF.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="VboxConexion" fillWidth="false" prefHeight="118.0" prefWidth="274.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="ConectarseBoton" mnemonicParsing="false" onAction="#onConectarseAction" prefHeight="26.0" prefWidth="92.0" text="Conectarse">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="DesconectarseBoton" mnemonicParsing="false" onAction="#onDesconectarseAction" prefHeight="27.0" prefWidth="93.0" text="Desconectarse">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin>
+            </VBox>
+            <HBox fx:id="HboxTabla" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <children>
+                  <VBox fx:id="VboxBotonesTabla" alignment="CENTER_RIGHT" prefHeight="446.0" prefWidth="224.0" spacing="10.0">
+                     <children>
+                        <HBox fx:id="HboxInsertarVisualizar" prefHeight="30.0" prefWidth="138.0">
+                           <children>
+                              <Button fx:id="Visualizar" mnemonicParsing="false" onAction="#onVisualizarAction" prefHeight="20.0" prefWidth="80.0" text="Visualizar">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Insertar" mnemonicParsing="false" onAction="#onInsertarAction" prefHeight="20.0" prefWidth="80.0" text="Insertar">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="HboxEliminarModificar" prefHeight="35.0" prefWidth="147.0">
+                           <children>
+                              <Button fx:id="Modificar" mnemonicParsing="false" onAction="#onModificarAction" prefHeight="20.0" prefWidth="80.0" text="Modificar">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="Eliminar" mnemonicParsing="false" onAction="#onEliminarAction" prefHeight="20.0" prefWidth="80.0" text="Eliminar">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="HboxProcedimientos" prefHeight="30.0" prefWidth="138.0">
+                           <children>
+                              <Button fx:id="ProcedimientoDNI" mnemonicParsing="false" onAction="#onProcedimientoDNIAction" prefHeight="20.0" prefWidth="80.0" text="Proc:DNI">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="ProcedimientoUNI" mnemonicParsing="false" onAction="#onProcedimientoUniAction" prefHeight="20.0" prefWidth="80.0" text="Proc:UNI">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="HboxProcedimientoMeses" prefHeight="30.0" prefWidth="138.0">
+                           <children>
+                              <Button fx:id="ProcedimientoInsertar" mnemonicParsing="false" onAction="#onProcedimientoInsertarAction" prefHeight="20.0" prefWidth="80.0" text="Proc:Insert">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="ProcedimientoMeses" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onProcedimientoMesesAction" prefHeight="20.0" prefWidth="80.0" text="Proc:Meses">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <TableView fx:id="TablaVistaResidencias" prefHeight="456.0" prefWidth="562.0">
+                    <columns>
+                      <TableColumn fx:id="ColumnaId" prefWidth="80.79998475313187" text="Id " />
+                      <TableColumn fx:id="ColumnaNombreResidencia" prefWidth="116.0" text="Nombre residencia" />
+                        <TableColumn fx:id="ColumnaNombreUniversidad" prefWidth="85.60002136230469" text="Nombre Uni." />
+                        <TableColumn fx:id="ColumnaCodigoUniversidad" prefWidth="64.79998779296875" text="Cod. Uni." />
+                        <TableColumn fx:id="ColumnaPrecioMensual" prefWidth="95.199951171875" text="Precio mensual" />
+                        <TableColumn fx:id="ColumnaComedor" prefWidth="112.800048828125" text="Comedor" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
